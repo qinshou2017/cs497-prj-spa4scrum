@@ -1,0 +1,353 @@
+# this is an auto generated file. This will be overwritten
+query GetUser($cognitoId: ID!) {
+  getUser(cognitoId: $cognitoId) {
+    cognitoId
+    username
+    email
+    projects {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListUsers(
+  $cognitoId: ID
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listUsers(
+    cognitoId: $cognitoId
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      cognitoId
+      username
+      email
+      projects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetProject($id: ID!) {
+  getProject(id: $id) {
+    id
+    name
+    members {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    firstSprintStartAt
+    cycle
+    description
+    Boards {
+      items {
+        id
+        name
+        category
+        cycle
+        description
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListProjects(
+  $filter: ModelProjectFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetBoard($id: ID!) {
+  getBoard(id: $id) {
+    id
+    name
+    category
+    cycle
+    description
+    projectId
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    cards {
+      items {
+        id
+        boardId
+        belongCardID
+        title
+        subTitle
+        content
+        totalTime
+        currentDuration
+        status
+        lastActivityAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListBoards(
+  $filter: ModelBoardFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listBoards(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      category
+      cycle
+      description
+      projectId
+      project {
+        id
+        name
+        firstSprintStartAt
+        cycle
+        description
+        createdAt
+        updatedAt
+      }
+      cards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetCard($id: ID!) {
+  getCard(id: $id) {
+    id
+    boardId
+    board {
+      id
+      name
+      category
+      cycle
+      description
+      projectId
+      project {
+        id
+        name
+        firstSprintStartAt
+        cycle
+        description
+        createdAt
+        updatedAt
+      }
+      cards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    belongCardID
+    title
+    subTitle
+    content
+    totalTime
+    currentDuration
+    status
+    lastActivityAt
+    createdAt
+    updatedAt
+  }
+}
+query ListCards(
+  $filter: ModelCardFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCards(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      boardId
+      board {
+        id
+        name
+        category
+        cycle
+        description
+        projectId
+        createdAt
+        updatedAt
+      }
+      belongCardID
+      title
+      subTitle
+      content
+      totalTime
+      currentDuration
+      status
+      lastActivityAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetSprintRecord($id: ID!) {
+  getSprintRecord(id: $id) {
+    id
+    sprintId
+    daysHistory {
+      date
+      actualEffort
+      reports {
+        userId
+        title
+        content
+      }
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListSprintRecords(
+  $filter: ModelSprintRecordFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listSprintRecords(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      sprintId
+      daysHistory {
+        date
+        actualEffort
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetUserByEmail(
+  $email: AWSEmail
+  $sortDirection: ModelSortDirection
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getUserByEmail(
+    email: $email
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      cognitoId
+      username
+      email
+      projects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetBoardsByProjectId(
+  $projectId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelBoardFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getBoardsByProjectId(
+    projectId: $projectId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      name
+      category
+      cycle
+      description
+      projectId
+      project {
+        id
+        name
+        firstSprintStartAt
+        cycle
+        description
+        createdAt
+        updatedAt
+      }
+      cards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

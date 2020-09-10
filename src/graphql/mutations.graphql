@@ -1,0 +1,613 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    cognitoId
+    username
+    email
+    projects {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    cognitoId
+    username
+    email
+    projects {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    cognitoId
+    username
+    email
+    projects {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateProejctMembers(
+  $input: CreateProejctMembersInput!
+  $condition: ModelProejctMembersConditionInput
+) {
+  createProejctMembers(input: $input, condition: $condition) {
+    id
+    userId
+    projectId
+    member {
+      cognitoId
+      username
+      email
+      projects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProejctMembers(
+  $input: UpdateProejctMembersInput!
+  $condition: ModelProejctMembersConditionInput
+) {
+  updateProejctMembers(input: $input, condition: $condition) {
+    id
+    userId
+    projectId
+    member {
+      cognitoId
+      username
+      email
+      projects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProejctMembers(
+  $input: DeleteProejctMembersInput!
+  $condition: ModelProejctMembersConditionInput
+) {
+  deleteProejctMembers(input: $input, condition: $condition) {
+    id
+    userId
+    projectId
+    member {
+      cognitoId
+      username
+      email
+      projects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateProject(
+  $input: CreateProjectInput!
+  $condition: ModelProjectConditionInput
+) {
+  createProject(input: $input, condition: $condition) {
+    id
+    name
+    members {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    firstSprintStartAt
+    cycle
+    description
+    Boards {
+      items {
+        id
+        name
+        category
+        cycle
+        description
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProject(
+  $input: UpdateProjectInput!
+  $condition: ModelProjectConditionInput
+) {
+  updateProject(input: $input, condition: $condition) {
+    id
+    name
+    members {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    firstSprintStartAt
+    cycle
+    description
+    Boards {
+      items {
+        id
+        name
+        category
+        cycle
+        description
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProject(
+  $input: DeleteProjectInput!
+  $condition: ModelProjectConditionInput
+) {
+  deleteProject(input: $input, condition: $condition) {
+    id
+    name
+    members {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    firstSprintStartAt
+    cycle
+    description
+    Boards {
+      items {
+        id
+        name
+        category
+        cycle
+        description
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateBoard(
+  $input: CreateBoardInput!
+  $condition: ModelBoardConditionInput
+) {
+  createBoard(input: $input, condition: $condition) {
+    id
+    name
+    category
+    cycle
+    description
+    projectId
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    cards {
+      items {
+        id
+        boardId
+        belongCardID
+        title
+        subTitle
+        content
+        totalTime
+        currentDuration
+        status
+        lastActivityAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateBoard(
+  $input: UpdateBoardInput!
+  $condition: ModelBoardConditionInput
+) {
+  updateBoard(input: $input, condition: $condition) {
+    id
+    name
+    category
+    cycle
+    description
+    projectId
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    cards {
+      items {
+        id
+        boardId
+        belongCardID
+        title
+        subTitle
+        content
+        totalTime
+        currentDuration
+        status
+        lastActivityAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteBoard(
+  $input: DeleteBoardInput!
+  $condition: ModelBoardConditionInput
+) {
+  deleteBoard(input: $input, condition: $condition) {
+    id
+    name
+    category
+    cycle
+    description
+    projectId
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    cards {
+      items {
+        id
+        boardId
+        belongCardID
+        title
+        subTitle
+        content
+        totalTime
+        currentDuration
+        status
+        lastActivityAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateCard(
+  $input: CreateCardInput!
+  $condition: ModelCardConditionInput
+) {
+  createCard(input: $input, condition: $condition) {
+    id
+    boardId
+    board {
+      id
+      name
+      category
+      cycle
+      description
+      projectId
+      project {
+        id
+        name
+        firstSprintStartAt
+        cycle
+        description
+        createdAt
+        updatedAt
+      }
+      cards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    belongCardID
+    title
+    subTitle
+    content
+    totalTime
+    currentDuration
+    status
+    lastActivityAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateCard(
+  $input: UpdateCardInput!
+  $condition: ModelCardConditionInput
+) {
+  updateCard(input: $input, condition: $condition) {
+    id
+    boardId
+    board {
+      id
+      name
+      category
+      cycle
+      description
+      projectId
+      project {
+        id
+        name
+        firstSprintStartAt
+        cycle
+        description
+        createdAt
+        updatedAt
+      }
+      cards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    belongCardID
+    title
+    subTitle
+    content
+    totalTime
+    currentDuration
+    status
+    lastActivityAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteCard(
+  $input: DeleteCardInput!
+  $condition: ModelCardConditionInput
+) {
+  deleteCard(input: $input, condition: $condition) {
+    id
+    boardId
+    board {
+      id
+      name
+      category
+      cycle
+      description
+      projectId
+      project {
+        id
+        name
+        firstSprintStartAt
+        cycle
+        description
+        createdAt
+        updatedAt
+      }
+      cards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    belongCardID
+    title
+    subTitle
+    content
+    totalTime
+    currentDuration
+    status
+    lastActivityAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateSprintRecord(
+  $input: CreateSprintRecordInput!
+  $condition: ModelSprintRecordConditionInput
+) {
+  createSprintRecord(input: $input, condition: $condition) {
+    id
+    sprintId
+    daysHistory {
+      date
+      actualEffort
+      reports {
+        userId
+        title
+        content
+      }
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateSprintRecord(
+  $input: UpdateSprintRecordInput!
+  $condition: ModelSprintRecordConditionInput
+) {
+  updateSprintRecord(input: $input, condition: $condition) {
+    id
+    sprintId
+    daysHistory {
+      date
+      actualEffort
+      reports {
+        userId
+        title
+        content
+      }
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteSprintRecord(
+  $input: DeleteSprintRecordInput!
+  $condition: ModelSprintRecordConditionInput
+) {
+  deleteSprintRecord(input: $input, condition: $condition) {
+    id
+    sprintId
+    daysHistory {
+      date
+      actualEffort
+      reports {
+        userId
+        title
+        content
+      }
+    }
+    createdAt
+    updatedAt
+  }
+}

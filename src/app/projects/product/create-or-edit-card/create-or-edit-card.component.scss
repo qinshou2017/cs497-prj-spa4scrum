@@ -1,0 +1,26 @@
+.normal-form {
+  margin-bottom: 1.75rem;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  margin-bottom: 2rem;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+}
+
+form button {
+  width: 100%;
+  padding: 0.8125rem 1.125rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+}

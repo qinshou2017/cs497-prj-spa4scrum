@@ -1,0 +1,559 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateUser {
+  onCreateUser {
+    cognitoId
+    username
+    email
+    projects {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateUser {
+  onUpdateUser {
+    cognitoId
+    username
+    email
+    projects {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteUser {
+  onDeleteUser {
+    cognitoId
+    username
+    email
+    projects {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateProejctMembers {
+  onCreateProejctMembers {
+    id
+    userId
+    projectId
+    member {
+      cognitoId
+      username
+      email
+      projects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateProejctMembers {
+  onUpdateProejctMembers {
+    id
+    userId
+    projectId
+    member {
+      cognitoId
+      username
+      email
+      projects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteProejctMembers {
+  onDeleteProejctMembers {
+    id
+    userId
+    projectId
+    member {
+      cognitoId
+      username
+      email
+      projects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateProject {
+  onCreateProject {
+    id
+    name
+    members {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    firstSprintStartAt
+    cycle
+    description
+    Boards {
+      items {
+        id
+        name
+        category
+        cycle
+        description
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateProject {
+  onUpdateProject {
+    id
+    name
+    members {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    firstSprintStartAt
+    cycle
+    description
+    Boards {
+      items {
+        id
+        name
+        category
+        cycle
+        description
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteProject {
+  onDeleteProject {
+    id
+    name
+    members {
+      items {
+        id
+        userId
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    firstSprintStartAt
+    cycle
+    description
+    Boards {
+      items {
+        id
+        name
+        category
+        cycle
+        description
+        projectId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateBoard {
+  onCreateBoard {
+    id
+    name
+    category
+    cycle
+    description
+    projectId
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    cards {
+      items {
+        id
+        boardId
+        belongCardID
+        title
+        subTitle
+        content
+        totalTime
+        currentDuration
+        status
+        lastActivityAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateBoard {
+  onUpdateBoard {
+    id
+    name
+    category
+    cycle
+    description
+    projectId
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    cards {
+      items {
+        id
+        boardId
+        belongCardID
+        title
+        subTitle
+        content
+        totalTime
+        currentDuration
+        status
+        lastActivityAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteBoard {
+  onDeleteBoard {
+    id
+    name
+    category
+    cycle
+    description
+    projectId
+    project {
+      id
+      name
+      members {
+        nextToken
+      }
+      firstSprintStartAt
+      cycle
+      description
+      Boards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    cards {
+      items {
+        id
+        boardId
+        belongCardID
+        title
+        subTitle
+        content
+        totalTime
+        currentDuration
+        status
+        lastActivityAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateCard {
+  onCreateCard {
+    id
+    boardId
+    board {
+      id
+      name
+      category
+      cycle
+      description
+      projectId
+      project {
+        id
+        name
+        firstSprintStartAt
+        cycle
+        description
+        createdAt
+        updatedAt
+      }
+      cards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    belongCardID
+    title
+    subTitle
+    content
+    totalTime
+    currentDuration
+    status
+    lastActivityAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateCard {
+  onUpdateCard {
+    id
+    boardId
+    board {
+      id
+      name
+      category
+      cycle
+      description
+      projectId
+      project {
+        id
+        name
+        firstSprintStartAt
+        cycle
+        description
+        createdAt
+        updatedAt
+      }
+      cards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    belongCardID
+    title
+    subTitle
+    content
+    totalTime
+    currentDuration
+    status
+    lastActivityAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteCard {
+  onDeleteCard {
+    id
+    boardId
+    board {
+      id
+      name
+      category
+      cycle
+      description
+      projectId
+      project {
+        id
+        name
+        firstSprintStartAt
+        cycle
+        description
+        createdAt
+        updatedAt
+      }
+      cards {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    belongCardID
+    title
+    subTitle
+    content
+    totalTime
+    currentDuration
+    status
+    lastActivityAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateSprintRecord {
+  onCreateSprintRecord {
+    id
+    sprintId
+    daysHistory {
+      date
+      actualEffort
+      reports {
+        userId
+        title
+        content
+      }
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateSprintRecord {
+  onUpdateSprintRecord {
+    id
+    sprintId
+    daysHistory {
+      date
+      actualEffort
+      reports {
+        userId
+        title
+        content
+      }
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteSprintRecord {
+  onDeleteSprintRecord {
+    id
+    sprintId
+    daysHistory {
+      date
+      actualEffort
+      reports {
+        userId
+        title
+        content
+      }
+    }
+    createdAt
+    updatedAt
+  }
+}

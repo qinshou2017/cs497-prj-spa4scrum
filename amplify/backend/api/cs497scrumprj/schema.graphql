@@ -1,0 +1,144 @@
+# doc: https://docs.amplify.aws/cli/graphql-transformer/directives
+# after updating your schema locally be sure to push your changes to the cloud via the Amplify CLI:
+#   amplify api gql-compile
+#   amplify push
+
+type User @model @key(fields: ["cognitoId"])
+  @key(name: "userByEmail", fields: ["email"], queryField: "getUserByEmail") {
+  cognitoId: ID!
+  username: String!
+  email: AWSEmail!
+  projects: [ProejctMembers] @connection(keyName: "projectsByUser", fields: ["cognitoId"])
+}
+
+# User <--m:n--> Project   by ProejctMembers
+
+type ProejctMembers
+  @model(queries: null)
+  @key(name: "projectsByUser", fields: ["userId", "projectId"])
+  @key(name: "membersByProject", fields: ["projectId", "userId"]) {
+  id: ID!
+  userId: ID!
+  projectId: ID!
+  member: User! @connection(fields: ["userId"])
+  project: Project! @connection(fields: ["projectId"])
+}
+
+type Project @model {
+  id: ID!
+  name: String!
+  members: [ProejctMembers!]! @connection(keyName: "membersByProject", fields: ["id"])
+  firstSprintStartAt: AWSDateTime  # UTC time ISO 8601
+  cycle: AWSTimestamp   # second base
+  description: String
+  boards: [Board!]! @connection(keyName: "boardsByProject", fields: ["id"])
+}
+
+# Project --1:n--> <--1:1-- Board
+
+type Board @model
+  @key(name: "boardsByProjectId", fields: ["projectId"], queryField: "getBoardsByProjectId")
+  @key(name: "boardsByProject", fields: ["projectId"]) {
+  id: ID!
+  name: String!
+  category: BoardCategory!
+  cycle: AWSTimestamp  # record sprint cycle length
+  description: String
+  projectId: ID!
+  project: Project! @connection(fields: ["projectId"])
+  cards: [Card]! @connection(keyName: "cardsByBoard", fields: ["id"], limit: 50)
+}
+enum BoardCategory { Product Sprint }
+
+# Board --1:n--> <--1:1-- Card
+
+type Card @model
+  @key(name: "cardsByBoardId", fields: ["boardId"], queryField: "getCardsByBoardId")
+  @key(name: "cardsByBoard", fields: ["boardId"]) {
+  id: ID!
+  boardId: ID!
+  board: Board! @connection(fields: ["boardId"])
+  belongCardID: ID
+  title: String
+  subTitle: String
+  content: String
+  totalTime: AWSTimestamp
+  currentDuration: AWSTimestamp
+  status: CardStatus
+  lastActivityAt: AWSTimestamp
+}
+enum CardStatus { stop doing }
+
+type SprintRecord @model {
+  id: ID!
+  sprintId: ID!
+  daysHistory: [DayHistory]!
+}
+type DayHistory {
+  date: AWSDateTime!
+  actualEffort: AWSTimestamp!
+  reports: [DayHistoryReport]
+}
+type DayHistoryReport {
+  userId: ID!
+  title: String
+  content: String!
+}
+
+# schema {
+#   query: Query
+#   mutation: Mutation
+# }
+
+# type Project {
+#   id: ID!
+#   name: String!
+#   members: [User]
+# }
+
+# type Sprint {
+#   projectId: ID!
+#   id: ID!
+# }
+
+# type Query {
+#   listProject(cognitoId: ID!): [Project]
+#   #  Get my user.
+#   getUser(cognitoId: ID!): User
+# }
+
+# type Mutation {
+#   #  Put a single value of type 'User'. If an item does not exist with the same key the item will be created. If there exists an item at that key already, it will be updated.
+#   createUser(username: String!): User
+#   createProject(userId: ID!): Project
+# }
+
+# type User {
+#   #  A unique identifier for the user.
+#   cognitoId: ID!
+#   #  The username
+#   username: String!
+# }
+
+
+
+# type Blog @model {
+#   id: ID!
+#   name: String!
+#   posts: [Post] @connection(keyName: "byBlog", fields: ["id"])
+# }
+
+# type Post @model @key(name: "byBlog", fields: ["blogID"]) {
+#   id: ID!
+#   title: String!
+#   blogID: ID!
+#   blog: Blog @connection(fields: ["blogID"])
+#   comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
+# }
+
+# type Comment @model @key(name: "byPost", fields: ["postID", "content"]) {
+#   id: ID!
+#   postID: ID!
+#   post: Post @connection(fields: ["postID"])
+#   content: String!
+# }

@@ -1,0 +1,88 @@
+mat-toolbar {
+  span {
+    margin-left: 20px;
+  }
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+.mat-radio-button {
+  margin-left: 16px;
+}
+
+.select-type {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  mat-radio-group {
+    margin-bottom: 12px;
+  }
+}
+.delete-board {
+  margin-top: 10px;
+  button {
+    float: right;
+    mat-icon {
+      vertical-align: sub;
+    }
+  }
+}
+.full-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  max-height: 50vh;
+  padding-top: 40px;
+  > mat-form-field {
+    width: 80%;
+    textarea {
+      height: 100px;
+    }
+  }
+  .langs {
+    width: 80%;
+    .lang-single {
+      mat-form-field + mat-form-field {
+        display: block;
+      }
+    }
+  }
+}
+
+button[matStepperPrevious] {
+  float: left;
+}
+button[matStepperNext] {
+  float: right;
+}
+
+@import '~src/styles.scss';
+// $primary: map-get($theme, primary);
+.warn-color {
+  color: mat-color($app-warn) !important;
+}
+
+.done-page {
+  button ~ button {
+    margin-left: 16px;
+  }
+  button { float: left; }
+  button[color="primary"] {
+    float: right;
+  }
+  p {
+    width: 100%;
+    float: left;
+    text-align: center;
+  }
+}

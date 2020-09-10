@@ -1,0 +1,17 @@
+{
+    "projectName": "cs497ScrumPrj",
+    "version": "3.0",
+    "frontend": "javascript",
+    "javascript": {
+        "framework": "angular",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "dist/cs497ScrumPrj",
+            "BuildCommand": "npm.cmd run-script build",
+            "StartCommand": "ng s"
+        }
+    },
+    "providers": [
+        "awscloudformation"
+    ]
+}
