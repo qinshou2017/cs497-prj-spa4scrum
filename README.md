@@ -1,6 +1,8 @@
 # Cs497ScrumPrj
 
-This project is a single-page application(SPA) for education and training Scrum, it is a project management system, and education tools. 项目的主要目的是为了解决远程教育和远程办公的需求。该项目适用于学校和公司培训，以及自学者。
+This project is a single-page application(SPA) for education and training Scrum, it is a project management system, and education tools. The main purpose of the project is to solve the needs of distance education and telecommuting. This project is suitable for school and company training, as well as self-study.
+
+The project uses Angular, GraphQL, AWS (Cognito, DynamoDB, Lambda, CloudWatch, Amplify, and AppSync).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
 
@@ -27,8 +29,8 @@ This project contains an Amplify project (`/amplify`) already configured & ready
 
 2. Clone this repository and navigate to the created folder:
     ```bash
-    $ git clone https://github.com/xxx.git
-    $ cd xxx
+    $ git clone https://github.com/qinshou2017/cs497-prj-spa4scrum.git
+    $ cd cs497-prj-spa4scrum
     ```
 
 3. Set up your AWS resources the Amplify CLI:
